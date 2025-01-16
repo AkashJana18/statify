@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/sheet";
 import { IconMenu2, IconSearch } from "@tabler/icons-react";
 import Link from "next/link";
+import { ThemeButton } from "./ui/theme-btn";
 
 const NavLinks = ({ isMobile }: { isMobile?: boolean }) => (
   <div className={`flex ${isMobile ? "flex-col space-y-4" : "items-center space-x-6"}`}>
@@ -34,25 +35,31 @@ const NavLinks = ({ isMobile }: { isMobile?: boolean }) => (
       <Button asChild>
         <Link href="/sign-up">Sign up</Link>
       </Button>
+  
     </div>
   </div>
 );
 
 const Navbar = () => {
   return (
-    <header className="flex justify-between items-center sticky top-0 p-4 bg-white/80 backdrop-blur-lg shadow-md z-50">
+    <header className="flex justify-between items-center sticky top-0 p-4 bg-background/50 backdrop-blur-lg shadow-md z-50">
       <div className="text-2xl font-bold">Statify</div>
 
       {/* Desktop Navigation */}
       <nav className="hidden md:flex items-center space-x-8">
         <NavLinks />
+        <ThemeButton />
       </nav>
-
       {/* Mobile Navigation */}
+      
       <Sheet>
-        <SheetTrigger className="md:hidden p-2">
+      <div className="md:hidden p-2 flex justify-center items-center gap-4">
+        <ThemeButton />
+        <SheetTrigger>
           <IconMenu2 size={24} />
         </SheetTrigger>
+      </div>
+        
         <SheetContent>
           <SheetHeader>
             <SheetTitle>Statify</SheetTitle>
