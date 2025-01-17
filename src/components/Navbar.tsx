@@ -23,7 +23,7 @@ const NavLinks = ({ isMobile }: { isMobile?: boolean }) => (
       Status
     </Link>
     <Link href="#" className="hover:underline">
-      Monitoring
+      Admin Panel
     </Link>
     <Link href="#" className="hover:underline">
       Contact Support
