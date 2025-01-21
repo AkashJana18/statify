@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -30,22 +30,22 @@ const NavLinks = ({ isMobile }: { isMobile?: boolean }) => (
         placeholder="Search Services..."
         className={`${isMobile ? "w-full" : "max-w-xs"}`}
       />
-      <Button type="submit" variant="secondary">
+      <Button type="submit" variant="default">
         {isMobile ? <IconSearch size={20} /> : "Search"}
       </Button>
     </div>
-    <Link href="#" className="hover:underline">
-      Status
+    <Link href="#" className="hover:text-foreground text-foreground/80">
+      User
     </Link>
-    <Link href="#" className="hover:underline">
+    <Link href="#" className="hover:text-foreground text-foreground/80">
       Admin Panel
     </Link>
-    <Link href="#" className="hover:underline">
-      Contact Support
-    </Link>
+
     <div className={`flex ${isMobile ? "flex-col space-y-2" : "space-x-4"}`}>
       <SignedOut>
-        <SignInButton />
+        <Button>
+          <SignInButton />
+        </Button>
       </SignedOut>
       <SignedIn>
         <UserButton />
@@ -56,7 +56,7 @@ const NavLinks = ({ isMobile }: { isMobile?: boolean }) => (
 
 const Navbar = () => {
   return (
-    <header className="flex justify-between items-center sticky top-0 p-4 bg-background/50 backdrop-blur-lg shadow-md z-50">
+    <header className="flex justify-between items-center sticky top-0 p-4 bg-background/50 backdrop-blur-lg shadow-md z-50 border-b">
       <Link href="/" className="text-2xl font-bold">
         Statify
       </Link>
