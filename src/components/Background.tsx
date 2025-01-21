@@ -1,42 +1,61 @@
 "use client";
-import useMouseMove from "@/hooks/use-mouse-move";
-import type { ReactNode } from "react";
+import { cn } from "@/lib/utils";
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import React from "react";
 
-export default function Background({ children }: { children: ReactNode }) {
-  // --x and --y will be updated based on mouse position
-  useMouseMove();
+export const Background = ({
+  children,
+  className,
+  containerClassName,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  containerClassName?: string;
+}) => {
+  let mouseX = useMotionValue(0);
+  let mouseY = useMotionValue(0);
+
+  function handleMouseMove({
+    currentTarget,
+    clientX,
+    clientY,
+  }: React.MouseEvent<HTMLDivElement>) {
+    if (!currentTarget) return;
+    let { left, top } = currentTarget.getBoundingClientRect();
+
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
   return (
-    <>
-      <div className="-z-50 fixed top-0 left-0">
-        <div className="sticky top-0 left-0 h-screen w-screen overflow-hidden">
-          <div className="absolute inset-0 z-[-1] bg-muted-foreground/15" />
-          <div className="-translate-x-1/2 -translate-y-1/2 absolute top-[--y] left-[--x] z-[-1] h-56 w-56 rounded-full bg-gradient-radial from-0% from-muted-foreground/40 to-90% to-transparent blur-md" />
-          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-            <defs>
-              <pattern
-                id="dotted-pattern"
-                width="16"
-                height="16"
-                patternUnits="userSpaceOnUse"
-              >
-                <circle cx="2" cy="2" r="1" fill="black" />
-              </pattern>
-              <mask id="dots-mask">
-                <rect width="100%" height="100%" fill="white" />
-                <rect width="100%" height="100%" fill="url(#dotted-pattern)" />
-              </mask>
-            </defs>
-            <rect
-              width="100%"
-              height="100%"
-              fill="hsl(var(--background))"
-              mask="url(#dots-mask)"
-            />
-          </svg>
-        </div>
-      </div>
+    <div
+      className={`relative h-[40rem] flex items-center justify-center w-full group`}
+      onMouseMove={handleMouseMove}
+    >
+      {/* Static Dotted Background */}
+      <div className="absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-800 pointer-events-none" />
 
-      {children}
-    </>
+      {/* Hover Animation */}
+      <motion.div
+        className="pointer-events-none bg-dot-thick-purple-500 dark:bg-dot-thick-purple-500 absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
+        style={{
+          WebkitMaskImage: useMotionTemplate`
+            radial-gradient(
+              200px circle at ${mouseX}px ${mouseY}px,
+              black 0%,
+              transparent 100%
+            )
+          `,
+          maskImage: useMotionTemplate`
+            radial-gradient(
+              200px circle at ${mouseX}px ${mouseY}px,
+              black 0%,
+              transparent 100%
+            )
+          `,
+        }}
+      />
+      <div className={cn("relative z-20", className)}>{children}</div>
+    </div>
   );
-}
+};
