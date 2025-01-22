@@ -20,7 +20,7 @@ const Hero = () => {
           <Link href="/dashboard">
             <Button>Get Started</Button>
           </Link>
-          <Link href="/">
+          <Link href="https://github.com/AkashJana18/statify">
             <button className="border text-sm font-medium relative border-neutral-200 bg-transparent backdrop-blur-lg dark:border-white/[0.2] text-black dark:text-white/90 px-4 py-2 rounded-lg">
               <div className="flex gap-2 items-center">
                 <span className="text-md">Star on Github</span>

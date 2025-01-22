@@ -43,16 +43,16 @@ export const FloatingNav = ({
               "relative dark:text-neutral-50 items-center flex gap-1 text-neutral-800 dark:hover:text-neutral-300 hover:text-neutral-950"
             )}
           >
-            {/* Icon: Hidden on larger screens */}
+            {/* Icon: Visible on smaller screens only */}
             <span className="block sm:hidden">{navItem.icon}</span>
-            {/* Nav Item Name */}
-            <span className="text-sm sm:text-base !cursor-pointer">
+            {/* Nav Item Name: Visible on larger screens only */}
+            <span className="hidden sm:block text-sm sm:text-base !cursor-pointer">
               {navItem.name}
             </span>
           </Link>
         ))}
         <Link href={"/dashboard"}>
-          <button className="border text-sm sm:text-base font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white/90 px-4 py-2 rounded-lg bg-background/50">
+          <button className="border hidden sm:block text-sm sm:text-base font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white/90 px-4 py-2 rounded-lg bg-background/50">
             <span>Dashboard</span>
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-purple-500 to-transparent h-px" />
           </button>

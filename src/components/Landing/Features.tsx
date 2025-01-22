@@ -49,8 +49,10 @@ export const Features = () => {
   ];
 
   return (
-    <section id="features" className="relative sm:w-[80%] py-16 bg-transparent backdrop-blur-sm border border-primary/25 rounded-lg">
-        
+    <section
+      id="features"
+      className="relative py-16 sm:w-[80%] my-16 h-screen bg-transparent backdrop-blur-sm border border-primary/25 rounded-lg"
+    >
       <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-600/10 via-transparent to-transparent blur-lg pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6">

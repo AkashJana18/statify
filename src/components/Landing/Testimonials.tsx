@@ -65,7 +65,7 @@ export const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-12 sm:w-[80%] my-20">
+    <section id="testimonials" className="py-16 sm:w-[80%] my-16 h-screen">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-[40%,60%] gap-12">
           {/* Use Cases on the left */}
@@ -81,7 +81,7 @@ export const Testimonials = () => {
               {useCases.map((useCase, index) => (
                 <div
                   key={index}
-                  className="p-2 border rounded-lg shadow-purple-500/20 shadow-md"
+                  className="p-2 border rounded-lg shadow-purple-500/20 shadow-md hover:scale-105"
                 >
                   <div className=" text-purple-500 mb-4 inline-flex gap-2 border-b w-full">
                     {useCase.icon}

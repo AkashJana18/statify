@@ -44,7 +44,10 @@ const FAQ = () => {
     //       </span>
     //     </h1>
     //     <p>You&#8217;ve got questions, and we&#8217;ve got answers.</p>
-    <section id="faq" className="relative sm:w-[80%] py-16 bg-transparent backdrop-blur-sm border border-primary/25 rounded-lg my-20">
+    <section
+      id="faq"
+      className="relative h-screen sm:w-[80%] py-16 bg-transparent backdrop-blur-sm border border-primary/25 rounded-lg my-16"
+    >
       <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-600/10 via-transparent to-transparent blur-lg pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6">
