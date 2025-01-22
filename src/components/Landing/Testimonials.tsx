@@ -4,7 +4,7 @@ import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 // Import Tabler icons
 import { IconChartBar, IconGlobe, IconLink } from "@tabler/icons-react";
 
-export const UseCases = () => {
+export const Testimonials = () => {
   const useCases = [
     {
       title: "Monitor Website Performance",
@@ -65,7 +65,7 @@ export const UseCases = () => {
   ];
 
   return (
-    <section className="py-12 w-[80%] my-20">
+    <section id="testimonials" className="py-12 sm:w-[80%] my-20">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-[40%,60%] gap-12">
           {/* Use Cases on the left */}

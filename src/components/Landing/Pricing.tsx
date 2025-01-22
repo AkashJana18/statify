@@ -46,7 +46,7 @@ const plans = [
 
 const Pricing = () => {
   return (
-    <div className="min-h-screen sm:w-[80%] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 w-full mb-10">
+    <section id="pricing" className="min-h-screen sm:w-[80%] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 w-full mb-10">
       <div className="mb-20">
         <h1 className="text-center font-semibold text-6xl m-4">Pricing</h1>
         <p className="text-center texl-2xl text-foreground/80">
@@ -87,7 +87,7 @@ const Pricing = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
