@@ -49,8 +49,10 @@ export const Features = () => {
   ];
 
   return (
-    <section className="relative py-16 bg-transparent backdrop-blur-sm border border-primary/25 rounded-lg">
-        
+    <section
+      id="features"
+      className="relative py-16 sm:w-[80%] my-16 h-screen bg-transparent backdrop-blur-sm border border-primary/25 rounded-lg"
+    >
       <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-600/10 via-transparent to-transparent blur-lg pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6">
@@ -74,7 +76,7 @@ export const Features = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-6 bg-background/50 rounded-lg shadow-purple-500/20 shadow-lg hover:shadow-xl hover:shadow-purple-500/20 transition-shadow duration-300 border"
+              className="flex flex-col items-center text-center p-6 bg-primary/5 rounded-lg shadow-purple-500/20 shadow-lg hover:shadow-xl hover:scale-105 hover:shadow-purple-500/20 transition-shadow duration-300 border"
             >
               {/* Icon */}
               <div className="mb-4">{feature.icon}</div>

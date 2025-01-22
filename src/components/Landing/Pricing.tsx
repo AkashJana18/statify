@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const plans = [
   {
     name: "Basic",
@@ -11,6 +13,7 @@ const plans = [
     buttonText: "Get started",
     popular: false,
     highlightStyle: "",
+    link: "/dashboard",
   },
   {
     name: "Pro",
@@ -26,6 +29,7 @@ const plans = [
     buttonText: "Get Subscription",
     popular: true,
     highlightStyle: "relative sm:scale-125 z-30",
+    link: "/payment",
   },
   {
     name: "Enterprise",
@@ -41,14 +45,18 @@ const plans = [
     buttonText: "Contact sales",
     popular: false,
     highlightStyle: "",
+    link: "mailto:akashjana663@gmail.com",
   },
 ];
 
 const Pricing = () => {
   return (
-    <div className="min-h-screen sm:w-[80%] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 w-full mb-10">
+    <section
+      id="pricing"
+      className="h-screen sm:w-[80%] flex flex-col items-center justify-center my-16 py-16"
+    >
       <div className="mb-20">
-        <h1 className="text-center font-semibold text-6xl m-4">Pricing</h1>
+        <h2 className="text-center font-bold text-4xl m-4">Pricing</h2>
         <p className="text-center texl-2xl text-foreground/80">
           Start today, upgrade later.
         </p>
@@ -73,9 +81,11 @@ const Pricing = () => {
               className="mt-6 text-4xl text-center font-bold text-foreground"
               dangerouslySetInnerHTML={{ __html: plan.price }}
             />
-            <button className="mt-4 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg w-full font-medium transition duration-200">
-              {plan.buttonText}
-            </button>
+            <Link href={plan.link}>
+              <button className="mt-4 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg w-full font-medium transition duration-200">
+                {plan.buttonText}
+              </button>
+            </Link>
             <ul className="mt-6 space-y-2">
               {plan.features.map((feature, i) => (
                 <li key={i} className="flex items-center">
@@ -87,7 +97,7 @@ const Pricing = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

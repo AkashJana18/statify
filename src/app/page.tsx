@@ -3,7 +3,7 @@ import Features from "@/components/Landing/Features";
 import { FloatingNav } from "@/components/Landing/FloatingNav";
 import Hero from "@/components/Landing/Hero";
 import Pricing from "@/components/Landing/Pricing";
-import { UseCases } from "@/components/Landing/Usecase";
+import { Testimonials } from "@/components/Landing/Testimonials";
 import {
   IconBrandTabler,
   IconCoin,
@@ -26,7 +26,7 @@ const HomePage = () => {
       <FloatingNav navItems={navItems} />
       <Hero />
       <Features />
-      <UseCases />
+      <Testimonials />
       <Pricing />
       <FAQ />
     </main>
