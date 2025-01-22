@@ -83,12 +83,12 @@ body {
   }
 
   ::-webkit-scrollbar-thumb {
-    background:#6e28b7  !important;
+    background:#a047ff  !important;
     border-radius: 3rem !important;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background:#6d28d9 !important;
+    background:#b283ff !important;
   }
 }
 

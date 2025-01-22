@@ -29,7 +29,10 @@ export const Background = ({
 
   return (
     <div
-      className={`relative h-[40rem] flex items-center justify-center w-full group`}
+      className={cn(
+        "relative min-h-screen w-full flex items-center justify-center group",
+        containerClassName
+      )}
       onMouseMove={handleMouseMove}
     >
       {/* Static Dotted Background */}

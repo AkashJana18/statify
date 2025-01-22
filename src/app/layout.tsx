@@ -1,9 +1,10 @@
+import { Background } from "@/components/Background";
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google"; // Import Montserrat
+import { ReactNode } from "react";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -16,11 +17,7 @@ export const metadata: Metadata = {
   description: "Created by Akash Jana",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <ClerkProvider
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
@@ -30,9 +27,12 @@ export default function RootLayout({
           className={`${montserrat.variable} antialiased`} // Use Montserrat variable
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <Navbar />
-            {children}
-            <Footer />
+            <Background>
+              <div className="relative z-30">
+                {children}
+                <Footer />
+              </div>
+            </Background>
           </ThemeProvider>
         </body>
       </html>
