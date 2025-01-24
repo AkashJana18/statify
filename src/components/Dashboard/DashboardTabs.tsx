@@ -37,7 +37,7 @@ const dashboardData = [
 
 const DashboardTabs: React.FC = () => {
   return (
-    <div className="w-full inline-flex gap-8">
+    <div className="w-full flex items-center justify-evenly gap-8">
       {dashboardData.map((item, index) => (
         <Card key={index} className="hover:border-primary">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 gap-4">
