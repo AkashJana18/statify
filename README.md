@@ -76,6 +76,10 @@ statify/
 └── package.json          # Project dependencies
 ```
 
+## Architecture
+![image](https://github.com/user-attachments/assets/e21cf52a-9d40-4ee2-b982-b42fb05a13a6)
+
+
 ## Future Roadmap
 
 - **Service Monitoring**: Add functionality to track the uptime and performance of websites, APIs, and databases.
