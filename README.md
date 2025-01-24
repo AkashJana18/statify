@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Statify
 
-## Getting Started
+Statify is a minimalistic, theme-based web application designed for seamless role-based authentication and tracking services like websites, APIs, and databases. The application features a clean and intuitive user interface with enhanced user authentication powered by Clerk and database management using Prisma ORM with Neon.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Theme-based UI**: A clean, minimal, and customizable frontend interface.
+- **Role-Based Authentication**: Secure authentication and role management using Clerk.
+- **Service Tracking (Planned)**: Track websites, APIs, and databases efficiently.
+- **Frontend Components**: Includes a responsive navbar, footer, and login functionality.
+
+## Tech Stack
+
+- **Frontend**: React.js (with theme-based styling)
+- **Backend**: Node.js (event-driven architecture concepts planned)
+- **Database**: Neon (PostgreSQL) with Prisma ORM
+- **Authentication**: Clerk (RBAC implementation)
+
+## Setup Instructions
+
+### Prerequisites
+
+Ensure you have the following installed:
+- Node.js (v16+)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/AkashJana18/statify.git
+   cd statify
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Set up environment variables:
+   Create a `.env` file in the root directory and add the following:
+   ```env
+   DATABASE_URL=your_neon_database_url
+   CLERK_API_KEY=your_clerk_api_key
+   ```
+
+4. Set up the database:
+   ```bash
+   npx prisma migrate dev
+   ```
+
+5. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+6. Open your browser and navigate to `http://localhost:3000`.
+
+## Project Structure
+
+```
+statify/
+├── public/               # Static assets
+├── src/
+│   ├── components/       # Reusable UI components (e.g., Navbar, Footer)
+│   ├── pages/            # Application pages
+│   ├── services/         # API service integrations
+│   ├── utils/            # Helper functions
+│   └── styles/           # Theme-based styling
+├── prisma/               # Prisma schema and migrations
+├── .env                  # Environment variables
+└── package.json          # Project dependencies
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Future Roadmap
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Service Monitoring**: Add functionality to track the uptime and performance of websites, APIs, and databases.
+- **Dashboard**: Implement a dashboard for users to view their tracked services.
+- **Event-Driven Architecture**: Integrate event-driven concepts for better scalability and responsiveness.
+- **Advanced Analytics**: Provide detailed insights into service performance.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contributing
 
-## Learn More
+Contributions are welcome! To get started:
 
-To learn more about Next.js, take a look at the following resources:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes and push the branch.
+4. Submit a pull request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Please ensure your changes align with the project's coding standards.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+Statify is licensed under the [MIT License](LICENSE).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Acknowledgments
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Neon**: For providing a modern, serverless PostgreSQL database solution.
+- **Clerk**: For simplifying authentication and role management.
+- **Prisma**: For seamless database interaction with TypeScript.
+
