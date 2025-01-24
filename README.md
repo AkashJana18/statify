@@ -103,9 +103,6 @@ Contributions are welcome! To get started:
 
 Please ensure your changes align with the project's coding standards.
 
-## License 📜
-
-Statify is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgments 🙏
 
