@@ -53,7 +53,7 @@ const Pricing = () => {
   return (
     <section
       id="pricing"
-      className="h-screen sm:w-[80%] flex flex-col items-center justify-center my-16 py-16"
+      className="h-full sm:w-[80%] flex flex-col items-center justify-center my-16 py-16"
     >
       <div className="mb-20">
         <h2 className="text-center font-bold text-4xl m-4">Pricing</h2>
