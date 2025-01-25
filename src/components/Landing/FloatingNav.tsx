@@ -4,18 +4,20 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
+type NavItem = {
+  name: string;
+  link: string;
+  icon?: React.ReactNode;
+};
+
 export const FloatingNav = ({
   navItems,
   className,
 }: {
-  navItems: {
-    name: string;
-    link: string;
-    icon?: React.ReactNode;
-  }[];
+  navItems: NavItem[];
   className?: string;
 }) => {
-  const [visible] = useState("true");
+  const [visible] = useState(true); // 'true' should be a boolean, not a string
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -35,7 +37,7 @@ export const FloatingNav = ({
           className
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
+        {navItems.map((navItem, idx) => (
           <Link
             key={`link=${idx}`}
             href={navItem.link}
