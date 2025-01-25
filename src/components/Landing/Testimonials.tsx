@@ -65,7 +65,7 @@ export const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-16 sm:w-[80%] my-16 h-screen">
+    <section id="testimonials" className="py-16 sm:w-[80%] my-16 h-full">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-[40%,60%] gap-12">
           {/* Use Cases on the left */}
