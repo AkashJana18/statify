@@ -101,7 +101,7 @@ export const Testimonials = () => {
             <h2 className="text-3xl text-center font-bold text-foreground mt-6">
               Testimonials
             </h2>
-            <p className="text-foreground/80 text-center p-1">See User's Opinion</p>
+            <p className="text-foreground/80 text-center p-1">See User&apos;s Opinion</p>
             <AnimatedTestimonials testimonials={testimonials} />
           </div>
         </div>
