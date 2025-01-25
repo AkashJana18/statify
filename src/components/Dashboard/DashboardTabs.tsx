@@ -37,10 +37,13 @@ const dashboardData = [
 
 const DashboardTabs: React.FC = () => {
   return (
-    <div className="w-full flex items-center justify-evenly gap-8">
+    <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-4">
       {dashboardData.map((item, index) => (
-        <Card key={index} className="hover:border-primary">
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 gap-4">
+        <Card
+          key={index}
+          className="hover:border-primary flex flex-col justify-between"
+        >
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 sm:gap-4">
             <CardTitle className="text-sm font-medium">{item.title}</CardTitle>
             {item.icon}
           </CardHeader>

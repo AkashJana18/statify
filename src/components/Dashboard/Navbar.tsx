@@ -104,10 +104,12 @@ const Navbar = () => {
             />
           </div>
         </form>
+
         <SignedOut>
-          <Button>
+          <div className="border hidden sm:block text-sm sm:text-base font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white/90 px-4 py-2 rounded-lg bg-background/50">
             <SignInButton />
-          </Button>
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-purple-500 to-transparent h-px" />
+          </div>
         </SignedOut>
         <SignedIn>
           <UserButton />
