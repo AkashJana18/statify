@@ -1,68 +1,10 @@
 "use client";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
-
+import { testimonials, useCases } from "@/data/landing-page-data";
 // Import Tabler icons
-import { IconChartBar, IconGlobe, IconLink } from "@tabler/icons-react";
 
 export const Testimonials = () => {
-  const useCases = [
-    {
-      title: "Monitor Website Performance",
-      description:
-        "Track key metrics like page load speed, uptime, and user interactions in real-time.",
-      icon: <IconGlobe />,
-    },
-    {
-      title: "Analyze API Usage",
-      description:
-        "Understand API requests, response times, and identify bottlenecks to improve efficiency.",
-      icon: <IconLink />,
-    },
-    {
-      title: "Database Insights",
-      description:
-        "Visualize query performance, database health, and trends over time.",
-      icon: <IconChartBar />,
-    },
-  ];
 
-  const testimonials = [
-    {
-      quote:
-        "Statify's performance monitoring tools have revolutionized how we track and analyze our services. We've gained invaluable insights.",
-      name: "Michael Rodriguez",
-      designation: "Product Manager at TechFlow",
-      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      quote:
-        "With Statify, we've optimized our API performance and can now make data-driven decisions to improve our workflows.",
-      name: "Sarah Chen",
-      designation: "CTO at InnovateSphere",
-      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      quote:
-        "Statify helped us uncover crucial insights about our database health, making it easier to optimize queries and improve performance.",
-      name: "Noah Watson",
-      designation: "Operations Director at CloudScale",
-      src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      quote:
-        "The scalability and robust features of Statify have been invaluable in managing our data infrastructure. Highly recommend it!",
-      name: "James Kim",
-      designation: "Engineering Lead at DataPro",
-      src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      quote:
-        "Statify's platform has significantly streamlined our data analysis, saving us hours of manual work and boosting team productivity.",
-      name: "Liz Thompson",
-      designation: "VP of Technology at FutureNet",
-      src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-  ];
 
   return (
     <section id="testimonials" className="py-16 sm:w-[80%] my-16 h-full">

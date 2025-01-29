@@ -1,52 +1,8 @@
 "use client";
-import {
-  IconCloud,
-  IconDeviceAnalytics,
-  IconLock,
-  IconTrendingUp,
-} from "@tabler/icons-react";
+import { features } from "@/data/landing-page-data";
 
 export const Features = () => {
-  const features = [
-    {
-      icon: (
-        <IconTrendingUp
-          size={40}
-          className="text-purple-600 dark:text-purple-400"
-        />
-      ),
-      title: "Real-Time Analytics",
-      description:
-        "Monitor the performance of your websites, APIs, and databases with live metrics and visualizations.",
-    },
-    {
-      icon: (
-        <IconLock size={40} className="text-purple-600 dark:text-purple-400" />
-      ),
-      title: "Role-Based Access",
-      description:
-        "Secure your data with granular access control, ensuring the right users have the right permissions.",
-    },
-    {
-      icon: (
-        <IconDeviceAnalytics
-          size={40}
-          className="text-purple-600 dark:text-purple-400"
-        />
-      ),
-      title: "Comprehensive Insights",
-      description:
-        "Dive deep into trends and patterns with detailed reports and customizable dashboards.",
-    },
-    {
-      icon: (
-        <IconCloud size={40} className="text-purple-600 dark:text-purple-400" />
-      ),
-      title: "Cloud Integration",
-      description:
-        "Easily integrate with cloud platforms and manage your services seamlessly from one interface.",
-    },
-  ];
+
 
   return (
     <section

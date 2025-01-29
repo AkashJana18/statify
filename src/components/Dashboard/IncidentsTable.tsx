@@ -5,7 +5,7 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle
+  CardTitle,
 } from "@/components/ui/card";
 import {
   Table,
@@ -15,52 +15,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { incidentsData } from "@/data/dashboard-data";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-const incidentsData = [
-  {
-    incident: "Database Outage",
-    status: "Resolved",
-    priority: "High",
-    date: "2023-06-23",
-    details: "Details",
-  },
-  {
-    incident: "API Latency",
-    status: "Investigating",
-    priority: "Medium",
-    date: "2023-06-24",
-    details: "Details",
-  },
-  {
-    incident: "Login Issues",
-    status: "Monitoring",
-    priority: "Low",
-    date: "2023-06-25",
-    details: "Details",
-  },
-  {
-    incident: "Server Crash",
-    status: "Resolved",
-    priority: "Critical",
-    date: "2023-06-26",
-    details: "Details",
-  },
-  {
-    incident: "Authentication Issues",
-    status: "Monitoring",
-    priority: "Low",
-    date: "2023-06-15",
-    details: "Details",
-  },
-  {
-    incident: "Server Slow down",
-    status: "Resolved",
-    priority: "Critical",
-    date: "2023-06-16",
-    details: "Details",
-  },
-];
+
 const IncidentsTable = () => {
   return (
     <div>
