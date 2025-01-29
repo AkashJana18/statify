@@ -4,35 +4,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { faqs } from "@/data/landing-page-data";
 
 const FAQ = () => {
-  const faqs = [
-    {
-      question: "Is there a free version of Statify?",
-      answer:
-        "Yes, our free plan offers basic monitoring features, including analytics and alerts for up to 3 services.",
-    },
-    {
-      question: "What types of services can I monitor with Statify?",
-      answer:
-        "You can monitor websites, APIs, and databases, allowing you to track uptime, performance, and metrics.",
-    },
-    {
-      question: "Does Statify support role-based access control?",
-      answer:
-        "Yes, our Pro and Enterprise plans offer role-based access control, enabling secure collaboration for teams.",
-    },
-    {
-      question: "How secure is my data on Statify?",
-      answer:
-        "Statify uses end-to-end encryption and follows industry best practices to ensure your data is secure.",
-    },
-    {
-      question: "Can I customize dashboards?",
-      answer:
-        "Yes, with our Pro and Enterprise plans, you can create and customize dashboards to suit your needs.",
-    },
-  ];
+
 
   return (
     // <div className="h-auto text-white py-12 px-6">

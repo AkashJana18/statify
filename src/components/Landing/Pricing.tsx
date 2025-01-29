@@ -1,53 +1,5 @@
+import { plans } from "@/data/landing-page-data";
 import Link from "next/link";
-
-const plans = [
-  {
-    name: "Basic",
-    description: "Ideal for individuals monitoring small-scale services.",
-    price: "&euro; 0",
-    features: [
-      "Monitor up to 3 services",
-      "Basic analytics and alerts",
-      "Free community support",
-    ],
-    buttonText: "Get started",
-    popular: false,
-    highlightStyle: "",
-    link: "/dashboard",
-  },
-  {
-    name: "Pro",
-    description:
-      "Designed for professionals and small teams to manage services efficiently.",
-    price: "&euro; 9.99",
-    features: [
-      "Monitor up to 10 services",
-      "Advanced analytics and alerts",
-      "Role-based access control",
-      "Priority email support",
-    ],
-    buttonText: "Get Subscription",
-    popular: true,
-    highlightStyle: "relative sm:scale-125 z-30",
-    link: "/payment",
-  },
-  {
-    name: "Enterprise",
-    description:
-      "Tailored for large organizations with complex monitoring needs.",
-    price: "Contact us",
-    features: [
-      "Unlimited services monitoring",
-      "Comprehensive analytics",
-      "Customizable dashboards",
-      "Dedicated account manager",
-    ],
-    buttonText: "Contact sales",
-    popular: false,
-    highlightStyle: "",
-    link: "mailto:akashjana663@gmail.com",
-  },
-];
 
 const Pricing = () => {
   return (
