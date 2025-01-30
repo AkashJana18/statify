@@ -1,9 +1,18 @@
-import { IconBrandGithub, IconMail } from "@tabler/icons-react";
+"use client"
+import { CardsChat } from "@/components/Chat"; // Import the Chat component
+import {
+  IconBrandGithub,
+  IconMail,
+  IconMessageChatbot,
+} from "@tabler/icons-react";
 import Link from "next/link";
+import { useState } from "react";
 import { Button } from "./ui/button";
 import { ThemeButton } from "./ui/theme-btn";
 
 const Footer = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   return (
     <footer className="p-2 bg-transparent border-t backdrop-blur-lg w-full sticky bottom-0 z-[99]">
       <div className="flex justify-between items-center gap-4 sm:gap-0 px-2">
@@ -38,8 +47,20 @@ const Footer = () => {
 
           {/* Theme Toggle Button */}
           <ThemeButton />
+
+          {/* Chatbot Button */}
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => setIsChatOpen((prev) => !prev)}
+          >
+            <IconMessageChatbot />
+          </Button>
         </div>
       </div>
+
+      {/* Chat Component - Toggle Visibility */}
+      {isChatOpen && <CardsChat />}
     </footer>
   );
 };
