@@ -7,7 +7,7 @@ Statify is a minimalistic, theme-based web application designed for seamless rol
 - **Theme-based UI**: A clean, minimal, and customizable frontend interface 🎨.
 - **Role-Based Authentication**: Secure authentication and role management using **Clerk** 🔐.
 - **Service Tracking (Planned)**: Track websites, APIs, and databases efficiently 🌐.
-- **Frontend Components**: Includes a responsive navbar, footer, and login functionality 🧩.
+- **Frontend Components**: Includes a responsive navbar, footer, login functionality, charts, table and other creative components 🧩.
 
 ## Tech Stack 🛠️
 
