@@ -11,7 +11,7 @@ Statify is a minimalistic, theme-based web application designed for seamless rol
 
 ## Tech Stack 🛠️
 
-- **Frontend**: Next.js (with theme-based styling) ⚛️
+- **Frontend**: Next.js | Tailwindcss | Shadcn (with theme-based styling) ⚛️
 - **Backend**: Node.js (event-driven architecture concepts planned) 💻
 - **Database**: Neon (PostgreSQL) with Prisma ORM 🗃️
 - **Authentication**: Clerk (RBAC implementation) 🔑
