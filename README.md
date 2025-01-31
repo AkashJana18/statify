@@ -16,6 +16,11 @@ Statify is a minimalistic, theme-based web application designed for seamless rol
 - **Database**: Neon (PostgreSQL) with Prisma ORM 🗃️
 - **Authentication**: Clerk (RBAC implementation) 🔑
 
+
+## Architecture 🏗️
+
+![Architecture](https://github.com/user-attachments/assets/e21cf52a-9d40-4ee2-b982-b42fb05a13a6)
+
 ## Look & Feel
 
 https://github.com/user-attachments/assets/9a8ac213-e240-4898-9dcb-91d7e31c0683
@@ -80,10 +85,6 @@ statify/
 ├── .env                  # Environment variables
 └── package.json          # Project dependencies
 ```
-
-## Architecture 🏗️
-
-![Architecture](https://github.com/user-attachments/assets/e21cf52a-9d40-4ee2-b982-b42fb05a13a6)
 
 ## Future Roadmap 🛤️
 
