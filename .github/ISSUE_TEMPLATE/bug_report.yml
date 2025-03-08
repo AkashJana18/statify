@@ -1,0 +1,79 @@
+name: 🐞 Bug Report
+description: Report a bug to help us improve the project
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please provide as much detail as possible.
+
+  - type: input
+    id: title
+    attributes:
+      label: "Bug Title"
+      description: "A clear and concise title for the bug."
+      placeholder: "Something isn't working..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Describe the Bug"
+      description: "A clear and concise description of what the bug is."
+      placeholder: "Explain the issue here..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: "Steps to Reproduce"
+      description: "Steps to reproduce the behavior."
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See the error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: "Expected Behavior"
+      description: "What should happen instead?"
+      placeholder: "Expected the app to..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Screenshots or Videos (if applicable)"
+      description: "Upload screenshots or videos to help us understand the issue."
+      placeholder: "Drag and drop files here or paste an image."
+
+  - type: input
+    id: environment
+    attributes:
+      label: "Environment (OS, Browser, Version)"
+      description: "Provide details about your setup."
+      placeholder: "Windows 11, Chrome 110, Node.js 18"
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Error Logs (if applicable)"
+      description: "Paste relevant error logs or console output."
+      render: shell
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: "Additional Information"
+      options:
+        - label: "I have searched for a duplicate issue."
+          required: true
+        - label: "I have provided all necessary details."
+          required: true
