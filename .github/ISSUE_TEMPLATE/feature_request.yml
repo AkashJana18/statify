@@ -1,0 +1,54 @@
+name: ✨ Feature Request
+description: Suggest a new feature or improvement
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a feature! Please fill out the details below.
+
+  - type: input
+    id: title
+    attributes:
+      label: "Feature Title"
+      description: "A short and descriptive title for your feature request."
+      placeholder: "Add dark mode support"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Describe the Feature"
+      description: "What is the feature about? Why is it useful?"
+      placeholder: "Explain what this feature should do..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: "Use Case / Why Do You Need This?"
+      description: "Describe how this feature will benefit users."
+      placeholder: "As a user, I want to..."
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternative Solutions (if any)"
+      description: "Have you considered other approaches?"
+      placeholder: "A possible alternative is..."
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "Additional Context or Screenshots"
+      description: "Provide any other relevant details or attach images."
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: "Additional Information"
+      options:
+        - label: "I have searched for a similar feature request."
+          required: true
+        - label: "I have provided all necessary details."
+          required: true
