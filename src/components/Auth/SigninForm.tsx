@@ -67,7 +67,7 @@ const SigninForm = ({ signInWithEmail, clerkError }: SignInFormProps) => {
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto bg-slate-900 border-slate-800">
+    <Card className="w-96 max-w-2xl mx-auto hover:border-primary">
       <CardHeader className="space-y-1">
         <CardTitle className="text-2xl font-semibold text-white">
           Sign in
@@ -121,7 +121,6 @@ const SigninForm = ({ signInWithEmail, clerkError }: SignInFormProps) => {
 
             <Button
               type="submit"
-              className="w-full bg-slate-700 hover:bg-slate-600 text-white"
               disabled={isSubmitting}
             >
               {isSubmitting && (
@@ -137,7 +136,7 @@ const SigninForm = ({ signInWithEmail, clerkError }: SignInFormProps) => {
             <Separator className="w-full border-slate-700" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-slate-900 px-2 text-slate-400">
+            <span className="px-2 text-slate-400">
               Or continue with
             </span>
           </div>
@@ -155,12 +154,12 @@ const SigninForm = ({ signInWithEmail, clerkError }: SignInFormProps) => {
             Sign up
           </Link>
         </p>
-        <Button
+        {/* <Button
           variant="link"
           className="text-slate-400 hover:text-white p-0 h-auto"
         >
           <Link href="/forgot-password">Forgot your password?</Link>
-        </Button>
+        </Button> */}
       </CardFooter>
     </Card>
   );

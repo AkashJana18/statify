@@ -71,7 +71,7 @@ const SignupForm = ({ signUpWithEmail, clerkError }: SignUpFormProps) => {
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto bg-slate-900 border-slate-800">
+    <Card className="w-full max-w-md mx-auto hover:border-primary">
       <CardHeader className="space-y-1">
         <CardTitle className="text-2xl font-semibold text-white">
           Sign up
@@ -129,7 +129,6 @@ const SignupForm = ({ signUpWithEmail, clerkError }: SignUpFormProps) => {
 
             <Button
               type="submit"
-              className="w-full bg-slate-700 hover:bg-slate-600 text-white"
               disabled={isSubmitting || !isLoaded}
             >
               {isSubmitting && (
@@ -145,7 +144,7 @@ const SignupForm = ({ signUpWithEmail, clerkError }: SignUpFormProps) => {
             <Separator className="w-full border-slate-700" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-slate-900 px-2 text-slate-400">
+            <span className="px-2 text-slate-400">
               Or continue with
             </span>
           </div>

@@ -24,7 +24,7 @@ const VerifyForm = ({
   };
   return (
     <div className="max-w-md flex justify-center items-center flex-col">
-      <Card className="w-full bg-slate-900 border-slate-800">
+      <Card className="w-full hover:border-primary">
         <CardHeader>
           <CardTitle className="text-2xl font-semibold text-center">
             Verification Code
@@ -47,23 +47,19 @@ const VerifyForm = ({
               Please check your email for the verification code
             </div>
             <Button
-              className="w-full bg-slate-700 hover:bg-white hover:text-blue-900"
               type="submit"
             >
               Complete Sign Up
             </Button>
           </form>
         </CardContent>
+        <div className="mt-2 text-white text-sm flex items-center justify-center">
+          back to
+          <Button variant={"link"} onClick={handleBack}>
+            Signup
+          </Button>
+        </div>
       </Card>
-      <div className="mt-4 gap-2 text-white text-sm flex items-center justify-center">
-        <span>Back to</span>
-        <Button
-          onClick={handleBack}
-          className="w-full bg-slate-700 hover:bg-white hover:text-blue-900"
-        >
-          Signup
-        </Button>
-      </div>
     </div>
   );
 };
