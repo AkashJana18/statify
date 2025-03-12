@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
-import { GoogleOneTap, SignUp, useSignUp } from "@clerk/nextjs";
+import { useSignUp } from "@clerk/nextjs";
 import SignupForm from "@/components/Auth/SignupForm";
 import VerifyForm from "@/components/Auth/VerifyForm";
+import { toast } from "sonner";
 
 const Signup = () => {
   const { isLoaded, signUp, setActive } = useSignUp();
@@ -13,6 +13,7 @@ const Signup = () => {
   const router = useRouter();
   const [verifying, setVerifying] = useState(false);
   const [code, setCode] = useState("");
+  const [verifyError, setVerifyError] = useState("");
 
   const signUpWithEmail = async ({
     emailAddress,
@@ -30,13 +31,12 @@ const Signup = () => {
         emailAddress,
         password,
       });
-      // send the email.
       await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
-
-      // change the UI to our pending section.
+      toast.success("Verification code sent to your email");
       setVerifying(true);
     } catch (err: any) {
-      setClerkError(err.errors[0].message);
+      toast.error(err.errors[0].longMessage);
+      setClerkError(err.errors[0].longMessage);
     }
   };
 
@@ -50,14 +50,19 @@ const Signup = () => {
       });
       if (completeSignUp.status !== "complete") {
         console.log(JSON.stringify(completeSignUp, null, 2));
+        toast.success("Verification code sent to your email");
+        setVerifying(true);
       }
 
       if (completeSignUp.status === "complete") {
         await setActive({ session: completeSignUp.createdSessionId });
+        toast.success("Account verified successfully");
         router.push("/dashboard");
       }
-    } catch (err) {
+    } catch (err: any) {
       console.log("Error:", JSON.stringify(err, null, 2));
+      setVerifyError(err.errors[0].longMessage);
+      toast.error(err.errors[0].longMessage);
     }
   };
 
@@ -66,7 +71,7 @@ const Signup = () => {
       {!verifying ? (
         <SignupForm signUpWithEmail={signUpWithEmail} clerkError={clerkError} />
       ) : (
-        <VerifyForm handleVerify={handleVerify} code={code} setCode={setCode} />
+        <VerifyForm handleVerify={handleVerify} code={code} setCode={setCode} verifyError={verifyError} setVerifing={setVerifying} />
       )}
     </>
   );

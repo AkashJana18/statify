@@ -40,25 +40,8 @@ const Signin = () => {
     }
   };
 
-  const signInWithGoogle = async () => {
-    try {
-      if (!signIn) {
-        throw new Error("signIn is not defined");
-      }
-      const result = await signIn.create({
-        strategy: "google_one_tap",
-        token: "your-google-one-tap-token", // Replace with the actual token
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   return (
-    <>
-      <SigninForm signInWithEmail={signInWithEmail} clerkError={clerkError} />
-      <button onClick={signInWithGoogle}>Sign in with Google</button>
-    </>
+    <SigninForm signInWithEmail={signInWithEmail} clerkError={clerkError} />
   );
 };
 

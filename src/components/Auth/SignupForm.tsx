@@ -1,6 +1,36 @@
+"use client";
+
+import { useState } from "react";
 import { useSignUp } from "@clerk/nextjs";
 import Link from "next/link";
-import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
+import { Loader2 } from "lucide-react";
+import { SocialSignIn } from "../SocialSignin";
+import { signupFormSchema } from "@/validations/Validations";
+
 
 interface SignUpFormProps {
   signUpWithEmail: ({
@@ -14,79 +44,127 @@ interface SignUpFormProps {
 }
 
 const SignupForm = ({ signUpWithEmail, clerkError }: SignUpFormProps) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { signUp, isLoaded } = useSignUp();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    signUpWithEmail({ emailAddress: email, password });
-  };
+  const form = useForm<z.infer<typeof signupFormSchema>>({
+    resolver: zodResolver(signupFormSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
 
-  const handleGoogleSignUp = async () => {
-    if (!isLoaded || !signUp) return;
+  // Handle form submission
+  const onSubmit = async (values: z.infer<typeof signupFormSchema>) => {
+    setIsSubmitting(true);
     try {
-      await signUp.create({
-        strategy: "oauth_google",
-        redirectUrl: "/sign-in",
+      await signUpWithEmail({
+        emailAddress: values.email,
+        password: values.password,
       });
-    } catch (err: any) {
-      if (err.errors && err.errors.length > 0) {
-        setError(err.errors[0].message);
-      } else {
-        setError("An error occurred during Google sign-up. Please try again.");
-      }
+    } catch (error) {
+      console.error("Signup error:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="">
-      <div className="">
-        <h1 className="mb-6 text-3xl font-light text-white">Sign Up</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="block w-full pb-4 pl-4 mb-3 text-sm font-light bg-transparent border-0 border-b-2 border-slate-600 text-white caret-slate-700 focus:border-white"
-            placeholder="Email address"
-            type="email"
-            required
-          />
-          <input
-            name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="block w-full pb-4 pl-4 mb-3 text-sm font-light bg-transparent border-0 border-b-2 border-slate-600 text-white caret-slate-700 focus:border-white"
-            placeholder="Password"
-            type="password"
-            required
-          />
-          {(clerkError || error) && (
-            <p className="text-red-500 mb-4">{clerkError || error}</p>
-          )}
-          <button
-            className="w-full h-12 mb-6 text-sm font-light text-white hover:text-blue-900 hover:bg-white bg-slate-700 rounded-md"
-            type="submit"
+    <Card className="w-full max-w-md mx-auto bg-slate-900 border-slate-800">
+      <CardHeader className="space-y-1">
+        <CardTitle className="text-2xl font-semibold text-white">
+          Sign up
+        </CardTitle>
+        <CardDescription className="text-slate-400">
+          Create an account to get started
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-white">Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Enter your email"
+                      {...field}
+                      className="bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-slate-400"
+                    />
+                  </FormControl>
+                  <FormMessage className="text-red-400" />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-white">Password</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="password"
+                      placeholder="Create a password"
+                      {...field}
+                      className="bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus-visible:ring-slate-400"
+                    />
+                  </FormControl>
+                  <FormDescription className="text-slate-500 text-xs">
+                    Password must be at least 8 characters with uppercase,
+                    lowercase, and numbers
+                  </FormDescription>
+                  <FormMessage className="text-red-400" />
+                </FormItem>
+              )}
+            />
+
+            {clerkError && (
+              <div className="text-red-400 text-sm py-2">{clerkError}</div>
+            )}
+
+            <Button
+              type="submit"
+              className="w-full bg-slate-700 hover:bg-slate-600 text-white"
+              disabled={isSubmitting || !isLoaded}
+            >
+              {isSubmitting && (
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              )}
+              Create account
+            </Button>
+          </form>
+        </Form>
+
+        <div className="relative">
+          <div className="absolute inset-0 flex items-center">
+            <Separator className="w-full border-slate-700" />
+          </div>
+          <div className="relative flex justify-center text-xs uppercase">
+            <span className="bg-slate-900 px-2 text-slate-400">
+              Or continue with
+            </span>
+          </div>
+        </div>
+
+        <SocialSignIn />
+      </CardContent>
+      <CardFooter className="flex justify-center">
+        <p className="text-sm text-slate-400">
+          Already have an account?{" "}
+          <Link
+            href="/sign-in"
+            className="text-slate-200 hover:text-white underline underline-offset-4"
           >
-            Create an account
-          </button>
-        </form>
-        <p className="text-sm font-light text-center text-white">
-          Already have an account?
-          <Link className="ml-2 text-slate-200" href="/sign-in">
-            Login
+            Sign in
           </Link>
         </p>
-        {/* <button
-          onClick={handleGoogleSignUp}
-          className="w-full h-12 mt-6 text-sm font-light text-white hover:text-blue-900 hover:bg-white bg-slate-700 rounded-md"
-        >
-          Sign up with Google
-        </button> */}
-      </div>
-    </div>
+      </CardFooter>
+    </Card>
   );
 };
 
