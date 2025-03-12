@@ -14,7 +14,7 @@ const Footer = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
-    <footer className="p-2 bg-transparent border-t backdrop-blur-lg w-full sticky bottom-0 z-[99]">
+    <footer className="p-2 bg-transparent border-t backdrop-blur-lg w-full fixed left-0 bottom-0 z-[99]">
       <div className="flex justify-between items-center gap-4 sm:gap-0 px-2">
         {/* Footer Text */}
         <p className="text-center sm:text-left mx-2 sm:text-sm text-xs">

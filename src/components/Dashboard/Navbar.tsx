@@ -1,11 +1,21 @@
+"use client";
+
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import {
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+  useUser,
+} from "@clerk/nextjs";
 import { House, Menu, Search } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
 const Navbar = () => {
+  const { isSignedIn, user, isLoaded } = useUser();
+
   return (
     <header className="sticky w-full rounded-lg top-0 flex h-16 items-center gap-4 border-b bg-transparent backdrop-blur-lg px-4 md:px-6 z-[999]">
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
@@ -104,16 +114,18 @@ const Navbar = () => {
             />
           </div>
         </form>
-
-        <SignedOut>
-          <div className="border hidden sm:block text-sm sm:text-base font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white/90 px-4 py-2 rounded-lg bg-background/50">
-            <SignInButton />
-            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-purple-500 to-transparent h-px" />
+        {!isSignedIn ? (
+          <div className="flex gap-2">
+            <Link href="/sign-up" className="self-center">
+              <Button>Signup</Button>
+            </Link>
+            <Link href="/sign-in" className="self-center">
+              <Button>Login</Button>
+            </Link>
           </div>
-        </SignedOut>
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
+        ) : (
+          <UserButton afterSignOutUrl="/" />
+        )}
       </div>
     </header>
   );
