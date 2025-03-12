@@ -114,28 +114,14 @@ const Navbar = () => {
             />
           </div>
         </form>
-
-        {/* <SignedOut>
-          <div className="border hidden sm:block text-sm sm:text-base font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white/90 px-4 py-2 rounded-lg bg-background/50">
-            <SignInButton />
-            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-purple-500 to-transparent h-px" />
-          </div>
-        </SignedOut>
-        <SignedIn>
-          <UserButton />
-        </SignedIn> */}
         {!isSignedIn ? (
           <div className="flex gap-2">
-            <div>
-              <Link href="/sign-up" className="self-center">
-                Signup
-              </Link>
-            </div>
-            <div>
-              <Link href="/sign-in" className="self-center">
-                Login
-              </Link>
-            </div>
+            <Link href="/sign-up" className="self-center">
+              <Button>Signup</Button>
+            </Link>
+            <Link href="/sign-in" className="self-center">
+              <Button>Login</Button>
+            </Link>
           </div>
         ) : (
           <UserButton afterSignOutUrl="/" />
