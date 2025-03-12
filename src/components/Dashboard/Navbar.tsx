@@ -126,12 +126,12 @@ const Navbar = () => {
         </SignedIn> */}
         {!isSignedIn ? (
           <div className="flex gap-2">
-            <div className="px-3 py-2 mb-6 text-xl font-light text-white hover:text-blue-900 hover:bg-white bg-slate-700 rounded-md">
+            <div>
               <Link href="/sign-up" className="self-center">
                 Signup
               </Link>
             </div>
-            <div className="px-3 py-2 mb-6 text-xl font-light text-white hover:text-blue-900 hover:bg-white bg-slate-700 rounded-md">
+            <div>
               <Link href="/sign-in" className="self-center">
                 Login
               </Link>
