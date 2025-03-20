@@ -26,7 +26,7 @@ const SpeedTest = () => {
   const [ping, setPing] = useState<string | null>(null);
   const [download, setDownload] = useState<string | null>(null);
   const [upload, setUpload] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<SpeedData[]>([
     { time: "00:00", download: 0, upload: 0 }, // Initial placeholder data
     { time: "00:01", download: 0, upload: 0 },
@@ -135,10 +135,10 @@ const SpeedTest = () => {
               </ResponsiveContainer>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-              <div className="text-center">
+            <div className="grid grid-cols-1  gap-4 md:grid-cols-3">
+              <div className="text-center flex flex-col items-center">
                 <p className="text-gray-600">Ping</p>
-                <p className="text-2xl font-bold">
+                <p className="text-2xl font-bold mt-2">
                   {ping ? (
                     `${ping} ms`
                   ) : loading ? (
@@ -149,9 +149,9 @@ const SpeedTest = () => {
                 </p>
               </div>
 
-              <div className="text-center">
+              <div className="text-center flex flex-col items-center">
                 <p className="text-gray-600">Download</p>
-                <p className="text-2xl font-bold">
+                <p className="text-2xl font-bold mt-2">
                   {download ? (
                     `${download} Mbps`
                   ) : loading ? (
@@ -162,9 +162,9 @@ const SpeedTest = () => {
                 </p>
               </div>
 
-              <div className="text-center">
+              <div className="text-center flex flex-col items-center">
                 <p className="text-gray-600">Upload</p>
-                <p className="text-2xl font-bold">
+                <p className="text-2xl font-bold mt-2">
                   {upload ? (
                     `${upload} Mbps`
                   ) : loading ? (
