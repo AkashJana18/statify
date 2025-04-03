@@ -105,9 +105,28 @@ Contributions are welcome! To get started:
 Please ensure your changes align with the project's coding standards.
 
 
-## Acknowledgments 🙏
+# Statify 🚀
 
-- **Neon**: For providing a modern, serverless PostgreSQL database solution 🌟.
-- **Clerk**: For simplifying authentication and role management 🔐.
-- **Prisma**: For seamless database interaction with TypeScript 💻.
+[![GitHub Repo stars](https://img.shields.io/github/stars/AkashJana18/statify?style=social)](https://github.com/AkashJana18/statify/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/AkashJana18/statify?style=social)](https://github.com/AkashJana18/statify/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/AkashJana18/statify)](https://github.com/AkashJana18/statify/issues)
+[![GitHub license](https://img.shields.io/github/license/AkashJana18/statify)](https://github.com/AkashJana18/statify/blob/main/LICENSE)
 
+## 📌 Contributors ✨
+
+Thanks to these amazing contributors:
+
+<a href="https://github.com/AkashJana18/statify/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=AkashJana18/statify" />
+</a>
+
+## 🌟 Stargazers  
+
+[![Stargazers repo roster](https://reporoster.com/stars/AkashJana18/statify)](https://github.com/AkashJana18/statify/stargazers)
+
+---
+
+### How to Contribute?
+Want to contribute? Feel free to fork the repo, make changes, and submit a PR! 🚀
+
+---
