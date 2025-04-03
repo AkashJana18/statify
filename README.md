@@ -103,6 +103,25 @@ Contributions are welcome! To get started:
 4. Submit a pull request ✨.
 
 Please ensure your changes align with the project's coding standards.
+# Statify 🚀
+
+[![GitHub Repo stars](https://img.shields.io/github/stars/vkoushik15/statify?style=social)](https://github.com/vkoushik15/statify/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/vkoushik15/statify?style=social)](https://github.com/vkoushik15/statify/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/vkoushik15/statify)](https://github.com/vkoushik15/statify/issues)
+[![GitHub license](https://img.shields.io/github/license/vkoushik15/statify)](https://github.com/vkoushik15/statify/blob/main/LICENSE)
+
+## 📌 Contributors ✨
+
+Thanks to these amazing contributors:
+
+<a href="https://github.com/vkoushik15/statify/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=vkoushik15/statify" />
+</a>
+
+## 🌟 Stargazers  
+
+[![Stargazers repo roster](https://reporoster.com/stars/vkoushik15/statify)](https://github.com/vkoushik15/statify/stargazers)
+
 
 
 ## Acknowledgments 🙏
