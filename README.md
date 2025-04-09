@@ -20,14 +20,11 @@ Statify is a minimalistic, theme-based web application designed for seamless rol
 - **Database**: Neon (PostgreSQL) with Prisma ORM 🗃️
 - **Authentication**: Clerk (RBAC implementation) 🔑
 
-
-## Architecture 🏗️
-
-![Architecture](https://github.com/user-attachments/assets/e21cf52a-9d40-4ee2-b982-b42fb05a13a6)
-
 ## Look & Feel
 
-https://github.com/user-attachments/assets/08f546e6-b0c8-4174-94ed-6d84c77f1f1
+https://github.com/user-attachments/assets/3d6706e5-8076-47bb-81f2-0b259115e368
+
+
 
 ## Setup Instructions 📋
 
@@ -88,6 +85,9 @@ Ensure you have the following installed:
 
 [![Stargazers repo roster](https://reporoster.com/stars/AkashJana18/statify)](https://github.com/AkashJana18/statify/stargazers)
 
+## Architecture 🏗️
+
+![Architecture](https://github.com/user-attachments/assets/e21cf52a-9d40-4ee2-b982-b42fb05a13a6)
 
 ## Future Roadmap 🛤️
 
