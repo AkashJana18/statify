@@ -27,7 +27,7 @@ Statify is a minimalistic, theme-based web application designed for seamless rol
 
 ## Look & Feel
 
-https://github.com/user-attachments/assets/9a8ac213-e240-4898-9dcb-91d7e31c0683
+https://github.com/user-attachments/assets/08f546e6-b0c8-4174-94ed-6d84c77f1f1
 
 ## Setup Instructions 📋
 
