@@ -7,7 +7,7 @@ import { Button } from "../ui/button";
 
 const Navbar = () => {
   return (
-    <header className="sticky w-full rounded-lg top-0 flex h-16 items-center gap-4 border-b bg-transparent backdrop-blur-lg px-4 md:px-6 z-[999]">
+    <header className="sticky w-full rounded-lg top-0 flex h-16 items-center gap-[17rem] border-b bg-transparent backdrop-blur-lg px-4 md:px-6 z-[999]">
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <Link
           href="/"
@@ -23,7 +23,7 @@ const Navbar = () => {
           Dashboard
         </Link>
         <Link
-          href="#incidents"
+          href="/dashboard/incidents"
           className="text-muted-foreground transition-colors hover:text-foreground"
         >
           Incidents
@@ -67,7 +67,7 @@ const Navbar = () => {
               Dashboard
             </Link>
             <Link
-              href="#"
+              href="/dashboard/incidents"
               className="text-muted-foreground hover:text-foreground"
             >
               Incidents

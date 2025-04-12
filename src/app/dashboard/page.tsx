@@ -8,7 +8,6 @@ import SystemHealthOverview from "@/components/Dashboard/SystemHealthOverview";
 export default function Dashboard() {
   return (
     <div className="flex h-full w-full flex-col gap-8 p-4">
-      <Navbar />
       <DashboardTabs />
       <div className="grid grid-cols-12 gap-8">
         <div className="col-span-12 sm:col-span-8">
@@ -27,4 +26,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
