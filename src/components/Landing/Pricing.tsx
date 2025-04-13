@@ -65,7 +65,7 @@ const Pricing = () => {
         {plans.map((plan, index) => (
           <div
             key={index}
-            className={`relative bg-transparent backdrop-blur-sm rounded-xl p-6 shadow-lg border border-purple-500/30 ${plan.highlightStyle}`}
+            className={`relative bg-transparent sm:backdrop-blur-lg backdrop-blur-sm rounded-xl p-6 shadow-lg border border-purple-500/30 ${plan.highlightStyle}`}
           >
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-600/10 via-transparent to-transparent blur-lg pointer-events-none" />
             {plan.popular && (

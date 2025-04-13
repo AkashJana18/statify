@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google"; // Import Montserrat
 import { ReactNode } from "react";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat", // Define the variable for Montserrat
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <Footer />
               </div>
             </Background>
+            <Toaster richColors/>
           </ThemeProvider>
         </body>
       </html>

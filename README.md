@@ -1,4 +1,8 @@
 # Statify 🖥️
+[![GitHub Repo stars](https://img.shields.io/github/stars/AkashJana18/statify?style=social)](https://github.com/AkashJana18/statify/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/AkashJana18/statify?style=social)](https://github.com/AkashJana18/statify/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/AkashJana18/statify)](https://github.com/AkashJana18/statify/issues)
+[![GitHub license](https://img.shields.io/github/license/AkashJana18/statify)](https://github.com/AkashJana18/statify/blob/main/LICENSE)
 
 Statify is a minimalistic, theme-based web application designed for seamless role-based authentication and tracking services like websites, APIs, and databases. The application features a clean and intuitive user interface with enhanced user authentication powered by **Clerk** and database management using **Prisma ORM** with **Neon**.
 
@@ -16,14 +20,11 @@ Statify is a minimalistic, theme-based web application designed for seamless rol
 - **Database**: Neon (PostgreSQL) with Prisma ORM 🗃️
 - **Authentication**: Clerk (RBAC implementation) 🔑
 
-
-## Architecture 🏗️
-
-![Architecture](https://github.com/user-attachments/assets/e21cf52a-9d40-4ee2-b982-b42fb05a13a6)
-
 ## Look & Feel
 
-https://github.com/user-attachments/assets/9a8ac213-e240-4898-9dcb-91d7e31c0683
+https://github.com/user-attachments/assets/3d6706e5-8076-47bb-81f2-0b259115e368
+
+
 
 ## Setup Instructions 📋
 
@@ -70,21 +71,23 @@ Ensure you have the following installed:
 
 6. Open your browser and navigate to `http://localhost:3000`.
 
-## Project Structure 📂
 
-```
-statify/
-├── public/               # Static assets (images, fonts, etc.)
-├── src/
-│   ├── components/       # Reusable UI components (e.g., Navbar, Footer)
-│   ├── pages/            # Application pages (e.g., Dashboard, Login)
-│   ├── services/         # API service integrations
-│   ├── utils/            # Helper functions (e.g., authentication helpers)
-│   └── styles/           # Theme-based styling (e.g., light/dark mode)
-├── prisma/               # Prisma schema and migrations
-├── .env                  # Environment variables
-└── package.json          # Project dependencies
-```
+
+##  Contributors 📌
+
+**Thanks to these amazing contributors:**
+
+<a href="https://github.com/AkashJana18/statify/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=AkashJana18/statify" />
+</a>
+
+##  Stargazers 🌟
+
+[![Stargazers repo roster](https://reporoster.com/stars/AkashJana18/statify)](https://github.com/AkashJana18/statify/stargazers)
+
+## Architecture 🏗️
+
+![Architecture](https://github.com/user-attachments/assets/e21cf52a-9d40-4ee2-b982-b42fb05a13a6)
 
 ## Future Roadmap 🛤️
 
@@ -92,22 +95,3 @@ statify/
 - **Dashboard**: Implement a dashboard for users to view their tracked services 📊.
 - **Event-Driven Architecture**: Integrate event-driven concepts for better scalability and responsiveness ⚡.
 - **Advanced Analytics**: Provide detailed insights into service performance 📈.
-
-## Contributing 🤝
-
-Contributions are welcome! To get started:
-
-1. Fork the repository 🍴.
-2. Create a new branch for your feature or bug fix 🧑‍💻.
-3. Commit your changes and push the branch 🚀.
-4. Submit a pull request ✨.
-
-Please ensure your changes align with the project's coding standards.
-
-
-## Acknowledgments 🙏
-
-- **Neon**: For providing a modern, serverless PostgreSQL database solution 🌟.
-- **Clerk**: For simplifying authentication and role management 🔐.
-- **Prisma**: For seamless database interaction with TypeScript 💻.
-
