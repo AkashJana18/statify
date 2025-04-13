@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -12,35 +12,43 @@ import {
 import { House, Menu, Search } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { usePathname } from "next/navigation";
+import { link } from "fs";
 
 const Navbar = () => {
+  const pathname = usePathname();
+  const isActive = (href: string) => {
+    return pathname === href ? "text-foreground" : "text-muted-foreground";
+  };
+
   const { isSignedIn, user, isLoaded } = useUser();
 
+
   return (
-    <header className="sticky w-full rounded-lg top-0 flex h-16 items-center gap-4 border-b bg-transparent backdrop-blur-lg px-4 md:px-6 z-[999]">
+    <header className="sticky w-full rounded-lg top-0 flex h-16 items-center gap-[17rem] border-b bg-transparent backdrop-blur-lg px-4 md:px-6 z-[999]">
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <Link
           href="/"
-          className="flex items-center gap-2 text-lg font-semibold md:text-base"
+          className={`flex items-center gap-2 text-lg font-semibold md:text-base`}
         >
           <House className="h-6 w-6" />
           <span className="sr-only">Statify</span>
         </Link>
         <Link
-          href="#"
-          className="text-foreground transition-colors hover:text-foreground"
+          href="/dashboard"
+          className={`text-foreground transition-colors hover:text-foreground ${isActive("/dashboard")}`}
         >
           Dashboard
         </Link>
         <Link
-          href="#incidents"
-          className="text-muted-foreground transition-colors hover:text-foreground"
+          href="/dashboard/incidents"
+          className={`hover:text-foreground ${isActive("/dashboard/incidents")}`}
         >
           Incidents
         </Link>
         <Link
           href="#sytems"
-          className="text-muted-foreground transition-colors hover:text-foreground"
+          className={`text-muted-foreground transition-colors hover:text-foreground`}
         >
           Systems
         </Link>
@@ -73,18 +81,18 @@ const Navbar = () => {
               <House className="h-6 w-6" />
               <span className="sr-only">Statify</span>
             </Link>
-            <Link href="#" className="hover:text-foreground">
+            <Link href="/dashboard" className={`hover:text-foreground ${isActive("/dashboard")}`}>
               Dashboard
             </Link>
             <Link
-              href="#"
-              className="text-muted-foreground hover:text-foreground"
+              href="/dashboard/incidents"
+              className={`text-muted-foreground hover:text-foreground ${isActive("/dashboard/incidents")}`}
             >
               Incidents
             </Link>
             <Link
               href="#"
-              className="text-muted-foreground hover:text-foreground"
+              className={`text-muted-foreground hover:text-foreground`}
             >
               Systems
             </Link>
