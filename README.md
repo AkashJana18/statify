@@ -69,10 +69,6 @@ Ensure you have the following installed:
   <img src="https://contrib.rocks/image?repo=AkashJana18/statify" />
 </a>
 
-##  Stargazers 🌟
-
-[![Stargazers repo roster](https://reporoster.com/stars/AkashJana18/statify)](https://github.com/AkashJana18/statify/stargazers)
-
 ## Architecture 🏗️
 
 ![Architecture](https://github.com/user-attachments/assets/e21cf52a-9d40-4ee2-b982-b42fb05a13a6)
