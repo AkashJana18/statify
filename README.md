@@ -50,18 +50,6 @@ Ensure you have the following installed:
    yarn install
    ```
 
-3. Set up environment variables:
-   Create a `.env` file in the root directory and add the following:
-   ```env
-   DATABASE_URL=your_neon_database_url
-   CLERK_API_KEY=your_clerk_api_key
-   ```
-
-4. Set up the database:
-   ```bash
-   npx prisma migrate dev
-   ```
-
 5. Start the development server:
    ```bash
    npm run dev
