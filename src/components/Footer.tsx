@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { ThemeButton } from "./ui/theme-btn";
+import { ScrollToTop } from "./ScrollToTop";//Import Scroll to Top component
 
 const Footer = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -58,7 +59,8 @@ const Footer = () => {
           </Button>
         </div>
       </div>
-
+      {/* Add scroll to top component */}
+      <ScrollToTop/>
       {/* Chat Component - Toggle Visibility */}
       {isChatOpen && <CardsChat />}
     </footer>
